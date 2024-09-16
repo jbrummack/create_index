@@ -1,0 +1,25 @@
+[package]
+name = "create_index"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+#  export LDFLAGS="-L/opt/homebrew/opt/libomp/lib"
+#  export CPPFLAGS="-I/opt/homebrew/opt/libomp/include"
+[dependencies]
+clap = { version = "4.5.4", features = ["derive"] }
+rayon = "1.10.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1"
+stopwatch = "0.0.7"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+#usearch = { version = "2.12.0", features = [
+#    "simsimd",
+#    "openmp",
+#] } #, features = ["simsimd", "openmp", "fp16lib"]
+
+# path = "../../../documents/Github/usearch"
+usearch = { git = "https://github.com/jbrummack/usearch", features = [
+    "simsimd",
+    #    "openmp",
+] }
